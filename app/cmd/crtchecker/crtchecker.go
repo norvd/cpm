@@ -5,11 +5,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/norvd/cpm/internal/crtchecker/crtfinder"
+	"github.com/norvd/cpm/internal/crtchecker"
 )
 
 func main() {
-	f := crtfinder.New("https://crt.sh")
+	f := crtchecker.New("https://crt.sh")
 	certs, err := f.Find(os.Args[1])
 	if err != nil {
 		log.Fatalf("failed to find certs: %v", err)
